@@ -1,14 +1,30 @@
 {
-  "name": "serializer-js",
-  "version": "1.0.0",
-  "description": "",
+  "name": "rutf8-toolkit",
+  "version": "0.1.0-alpha.1",
+  "description": "Serialization and compression toolkit for Cyrillic text",
   "main": "prod.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "images/"
+  ],
+  "keywords": [
+    "rutf8",
+    "compression",
+    "serialization",
+    "cyrillic",
+    "huffman",
+    "lz77",
+    "lzss",
+    "rle"
+  ],
+  "author": "Petr Lipatov",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^22.4.2",
     "jest": "^29.7.0",

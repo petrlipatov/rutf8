@@ -6,7 +6,6 @@ import {
 } from "./utils/helpers";
 import { EncodedArray, Options } from "./utils/types";
 import { NULL_UNICODE } from "./utils/constants";
-import { SP_ENG_200 } from "../../../tests/samples/common.samples";
 
 /**
  * LZ77 encodes repeated patterns using tuples [offset, length, next-unmatched-symbol]:

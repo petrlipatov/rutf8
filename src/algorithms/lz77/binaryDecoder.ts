@@ -1,6 +1,4 @@
-import { SP_ENG_200 } from "../../../tests/samples/common.samples";
 import { BinaryReader } from "../../common/binary-reader";
-import { lz77BinaryEncode } from "./binaryEncoder";
 import { NULL_UNICODE } from "./utils/constants";
 import { addMatchedPattern } from "./utils/helpers";
 
