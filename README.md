@@ -21,6 +21,13 @@ To achieve the best results with Cyrillic text, it is recommended to apply these
 
 RUTF-8 is a custom encoding system that maps Russian Unicode characters to predefined ASCII symbols and vice versa. This allows Russian text to be encoded as single-byte ASCII characters, while maintaining full support for all other characters.
 
+#### How does it work:
+
+- The algorithm performs a two-way mapping:
+  - Russian characters are replaced with corresponding ASCII characters when encoding.
+  - ASCII characters are replaced with their corresponding Russian characters when decoding.
+- All symbols are supported, and no characters need to be removed or replaced during encoding/decoding.
+
 #### Functions:
 
 - `rutf8Encoder`: Encodes Russian characters to ASCII.
@@ -31,6 +38,14 @@ RUTF-8 is a custom encoding system that maps Russian Unicode characters to prede
 ### 2) Huffman
 
 The Huffman module applies variable-length encoding to text content using the Huffman tree algorithm. This technique helps compress data by assigning shorter codes to more frequent characters.
+
+#### How does it work:
+
+- Analyzes character frequencies to determine optimal encodings.
+- Creates efficient variable-length codes for each character using a Huffman Tree.
+- Encodes input text with these variable-length codes.
+- Packs the Huffman tree and encoded data into a binary buffer for storage or transmission.
+- Decodes text without needing an external schema (schemaless decoding).
 
 #### Functions:
 
@@ -46,6 +61,19 @@ The Huffman module applies variable-length encoding to text content using the Hu
 
 LZSS is an optimized version of the LZ77 algorithm, offering text data compression using a sliding window technique.
 
+#### How does it work:
+
+- `Lookahead Buffer` holds the upcoming characters that the algorithm will attempt to match against the search buffer. It allows the algorithm to anticipate and find repeating patterns in the data.
+- `Search Buffer` contains previously processed characters and is used to find matches for the data in the lookahead buffer.
+- LZSS encodes repeated patterns with tuples [offset, length]
+  - Encoding happens only if repeated pattern length > 2
+  - In other cases chars are coded as uint8 (Ascii)
+  - If a match is found at the end of the Search Buffer, the algorithm will test the matched pattern against the remaining Lookahead Buffer and apply Run-Length Encoding (RLE) if possible.
+- `binaryEncoder(input, options)` as 2d parameter takes option object
+  - options allow to set length of Search Buffer and Lookahead Buffer
+  - default values: { searchBufferLength = 255, lookaheadLength = 15 }
+  - max values: { searchBufferLength = 4095, lookaheadLength = 15 }
+
 #### Functions:
 
 - `binaryEncoder`: Encodes text data using LZSS compression.
@@ -60,6 +88,13 @@ LZSS is an optimized version of the LZ77 algorithm, offering text data compressi
 
 LZ77 is one of the fundamental algorithms in text compression, invented by Abraham Lempel and Jacob Ziv in 1977. It uses a sliding window to find repeating sequences.
 
+- LZ77 symbols and repeated patterns with tuples [offset, length, next unmatched char]
+- If a match is found at the end of the Search Buffer, the algorithm will test the matched pattern against the remaining Lookahead Buffer and apply Run-Length Encoding (RLE) if possible.
+- `binaryEncoder(input, options)` as 2d parameter takes option object
+  - options allow to set length of Search Buffer and Lookahead Buffer
+  - default values: { searchBufferLength = 255, lookaheadLength = 15 }
+  - max values: { searchBufferLength = 4095, lookaheadLength = 15 }
+
 #### Functions:
 
 - `binaryEncoder`: Encodes text data using LZ77 compression.
@@ -70,7 +105,7 @@ LZ77 is one of the fundamental algorithms in text compression, invented by Abrah
 
 ![title](./images/lz77-schema.webp)
 
-### 5) BWT (Burrows-Wheeler Transform)
+### 5) BWT
 
 The Burrows-Wheeler Transform (BWT) is a data preprocessing algorithm that rearranges text data in a reversible way, making it more suitable for compression.
 
