@@ -88,7 +88,7 @@ LZSS is an optimized version of the LZ77 algorithm, offering text data compressi
 
 LZ77 is one of the fundamental algorithms in text compression, invented by Abraham Lempel and Jacob Ziv in 1977. It uses a sliding window to find repeating sequences.
 
-- LZ77 symbols and repeated patterns with tuples [offset, length, next unmatched char]
+- LZ77 encodes symbols and repeated patterns with tuples [offset, length, next unmatched char]
 - If a match is found at the end of the Search Buffer, the algorithm will test the matched pattern against the remaining Lookahead Buffer and apply Run-Length Encoding (RLE) if possible.
 - `binaryEncoder(input, options)` as 2d parameter takes option object
   - options allow to set length of Search Buffer and Lookahead Buffer
