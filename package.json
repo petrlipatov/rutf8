@@ -1,7 +1,7 @@
 {
   "name": "rutf8-toolkit",
   "version": "0.1.0-alpha.1",
-  "description": "Serialization and compression toolkit for Cyrillic text",
+  "description": "Serialization and compression toolkit for cyrillic payloads",
   "scripts": {
     "build": "tsc",
     "test": "jest"
@@ -9,7 +9,6 @@
   "files": [
     "dist",
     "README.md",
-    "LICENSE",
     "images/"
   ],
   "keywords": [
@@ -33,5 +32,9 @@
   "dependencies": {
     "@babel/preset-env": "^7.25.4",
     "@babel/preset-typescript": "^7.24.7"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/LipatovPetr/rutf8/issues"
+  },
+  "homepage": "https://github.com/LipatovPetr/rutf8/blob/main/README.md"
 }
