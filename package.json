@@ -2,7 +2,6 @@
   "name": "rutf8-toolkit",
   "version": "0.1.0-alpha.1",
   "description": "Serialization and compression toolkit for Cyrillic text",
-  "main": "prod.js",
   "scripts": {
     "build": "tsc",
     "test": "jest"

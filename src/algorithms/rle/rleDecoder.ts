@@ -1,6 +1,6 @@
 import { extractSymbolAndCount } from "./utils/helpers";
 
-export function rleDecompress(input: string): string {
+export function rleDecode(input: string): string {
   if (input.length === 0) return "";
 
   let output = "";

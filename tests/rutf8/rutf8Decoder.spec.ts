@@ -1,5 +1,5 @@
 import { describe, expect, it } from "@jest/globals";
-import { rutf8Decode } from "../../src/algorithms/rutf8";
+import { rutf8Decode } from "../../src";
 import { SP_RUS_30, SP_RUS_200 } from "../samples/common.samples";
 import { RUTF8_SP_RUS_200, RUTF8_SP_RUS_30 } from "../samples/rutf8.samples";
 

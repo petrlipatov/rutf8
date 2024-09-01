@@ -1,8 +1,5 @@
 import { describe, expect, it } from "@jest/globals";
-import {
-  rutf8BinaryEncode,
-  rutf8BinaryDecode,
-} from "../../src/algorithms/rutf8";
+import { rutf8BinaryEncode, rutf8BinaryDecode } from "../../src";
 
 import { SP_ENG_200 } from "../samples/common.samples";
 

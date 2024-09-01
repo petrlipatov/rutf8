@@ -1,5 +1,5 @@
 import { describe, expect, it } from "@jest/globals";
-import { bwtDecode } from "../../src/algorithms/bwt";
+import { bwtDecode } from "../../src";
 
 import { END_OF_STRING } from "../../src/algorithms/bwt/utils/constants";
 

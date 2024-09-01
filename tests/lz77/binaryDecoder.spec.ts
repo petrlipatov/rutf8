@@ -1,5 +1,5 @@
 import { describe, expect, it } from "@jest/globals";
-import { lz77BinaryEncode, lz77BinaryDecode } from "../../src/algorithms/lz77";
+import { lz77BinaryEncode, lz77BinaryDecode } from "../../src";
 
 import { SP_ENG_200 } from "../samples/common.samples";
 

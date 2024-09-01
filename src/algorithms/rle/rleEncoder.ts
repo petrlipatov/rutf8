@@ -1,6 +1,6 @@
 import { SPECIAL_CHAR } from "./utils/constants";
 
-export function rleCompress(input: string): string {
+export function rleEncode(input: string): string {
   if (input.length === 0) {
     throw new Error("Input string cannot be empty.");
   }

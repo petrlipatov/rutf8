@@ -1,8 +1,5 @@
 import { describe, expect, it } from "@jest/globals";
-import {
-  huffmanBinaryEncode,
-  huffmanBinaryDecode,
-} from "../../src/algorithms/huffman";
+import { huffmanBinaryEncode, huffmanBinaryDecode } from "../../src";
 
 import { SP_ENG_200 } from "../samples/common.samples";
 
