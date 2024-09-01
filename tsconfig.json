@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2019",
-    "module": "ESNext",
-    "lib": ["es2019", "dom"],
+    "target": "ES5",
+    "module": "ES2015",
+    "lib": ["es2015", "dom"],
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
@@ -10,7 +10,8 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "downlevelIteration": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "declaration": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
