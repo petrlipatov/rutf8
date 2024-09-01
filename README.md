@@ -55,7 +55,7 @@ The Huffman module applies variable-length encoding to text content using the Hu
 
 #### Binary Encoding
 
-![title](./images/huffman-schema.webp)
+![Huffman Binary Schema](https://i.imgur.com/XtOWnG0.jpeg)
 
 ### 3) LZSS
 
@@ -82,7 +82,7 @@ LZSS is an optimized version of the LZ77 algorithm, offering text data compressi
 
 #### Binary Encoding
 
-![title](./images/lzss-schema.webp)
+![LZSS Schema](https://i.imgur.com/aqZbYui.jpeg)
 
 ### 4) LZ77
 
@@ -103,7 +103,7 @@ LZ77 is one of the fundamental algorithms in text compression, invented by Abrah
 
 #### Binary Encoding
 
-![title](./images/lz77-schema.webp)
+![LZ77 Schema](https://i.imgur.com/j25RpK8.jpeg)
 
 ### 5) BWT
 

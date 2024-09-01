@@ -54,7 +54,7 @@
 
 #### Двоичное кодирование
 
-![Huffman Schema](./images/huffman-schema.webp)
+![Huffman Binary Schema](https://i.imgur.com/XtOWnG0.jpeg)
 
 ### 3) LZSS
 
@@ -77,7 +77,7 @@
 
 #### Двоичное кодирование
 
-![LZSS Schema](./images/lzss-schema.webp)
+![LZSS Schema](https://i.imgur.com/aqZbYui.jpeg)
 
 ### 4) LZ77
 
@@ -94,7 +94,7 @@
 
 #### Двоичное кодирование
 
-![LZ77 Schema](./images/lz77-schema.webp)
+![LZ77 Schema](images/lz77-schema.webp)
 
 ### 5) BWT
 
