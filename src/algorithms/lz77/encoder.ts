@@ -18,9 +18,17 @@ import { NULL_UNICODE } from "./utils/constants";
  *
  * `next-unmatched-symbol` -> The next symbol in the stream that does not participate in
  *                             the current pattern match, which will be encoded as a literal.
+ *
+ * @param {string} input - The input string to encode using the LZ77 compression algorithm.
+ * @param {Partial<Options>} [options] - Optional settings to customize the compression behavior.
+ *   - `searchBufferLength` (number): The maximum length of the search buffer.
+ *   - `lookaheadLength` (number): The length of the lookahead buffer.
+ * @returns {EncodedArray} array of tuples [offset, length, next-unmatched-symbol][]
  */
-
-export function lz77Encode(input: string, options?: Partial<Options>) {
+export function lz77Encode(
+  input: string,
+  options?: Partial<Options>
+): EncodedArray {
   const output: EncodedArray = [];
 
   let pointer = 0;

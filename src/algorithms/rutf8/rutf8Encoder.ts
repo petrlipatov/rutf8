@@ -14,6 +14,9 @@ import { russianToAsciiMap, asciiToRussianMap } from "./utils/constants";
  *
  * This implementation is bidirectional, meaning it can encode text into a more compact ASCII representation
  * and decode it back to the original Russian Unicode text.
+ *
+ * @param {string} text - The input string to encode using the RUTF8 encoding scheme.
+ * @returns {string} The RUTF8-encoded string.
  */
 export function rutf8Encode(text): string {
   const output: string[] = new Array(text.length);

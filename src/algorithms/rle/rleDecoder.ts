@@ -1,5 +1,14 @@
 import { extractSymbolAndCount } from "./utils/helpers";
 
+/**
+ * Decodes a string encoded with the Run-Length Encoding (RLE) algorithm.
+ *
+ * This function reconstructs the original string from its RLE-encoded form by expanding sequences
+ * of repeated characters based on the counts specified in the encoded string.
+ *
+ * @param {string} input - The RLE-encoded string to decode.
+ * @returns {string} The decoded original string.
+ */
 export function rleDecode(input: string): string {
   if (input.length === 0) return "";
 

@@ -1,5 +1,15 @@
 import { SPECIAL_CHAR } from "./utils/constants";
 
+/**
+ * Encodes a string using the Run-Length Encoding (RLE) algorithm.
+ *
+ * This function compresses the input string by replacing consecutive repeated characters with
+ * a single character followed by the count of repetitions. If there are numeric characters in the
+ * input, a special character is inserted to differentiate literal numbers from counts in the RLE output.
+ *
+ * @param {string} input - The input string to encode using the RLE algorithm.
+ * @returns {string} The RLE-encoded string.
+ */
 export function rleEncode(input: string): string {
   if (input.length === 0) {
     throw new Error("Input string cannot be empty.");

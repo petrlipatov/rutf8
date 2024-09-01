@@ -1,6 +1,17 @@
 import { BinaryReader } from "../../common/binary-reader";
 
-export function lzssBinaryDecode(buffer: ArrayBuffer) {
+/**
+ * Decodes a string encoded with the LZSS compression algorithm from a binary buffer.
+ *
+ * This function reads a binary buffer containing LZSS-encoded data, which includes a schema byte
+ * to indicate whether the following data is a literal character or a reference to a previously encoded
+ * substring (offset-length pair). The function reconstructs the original string by expanding the
+ * matched patterns and appending literal characters.
+ *
+ * @param {ArrayBuffer} buffer - The binary buffer containing the LZSS-encoded data.
+ * @returns {string} The decoded original string.
+ */
+export function lzssBinaryDecode(buffer: ArrayBuffer): string {
   const binaryReader = new BinaryReader(buffer);
   let output = "";
 

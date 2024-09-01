@@ -10,13 +10,29 @@ import { MIN_MATCH_LENGTH } from "./utils/constants";
 import { EncodedArray, Options } from "./utils/types";
 
 /**
- * LZSS encodes repeated patterns with tuples [offset, length]:
- * `offset` -> The distance (in characters) that points back to the earlier
- *             occurrence of the repeated pattern.
- * `length` -> The number of characters that match  representing the length
- *             of the repeated sequence.
+ * Encodes a string using the LZSS compression algorithm.
+ *
+ * This function compresses the input string with the LZSS algorithm, generating encoded data
+ * that includes literals and offset-length pairs, along with a schema byte array that indicates
+ * the format of the encoded data. The schema helps in interpreting the encoded data during decompression.
+ *
+ * @param {string} input - The input string to encode using the LZSS compression algorithm.
+ * @param {Partial<Options>} [options] - Optional settings to customize the compression behavior.
+ *   - `searchBufferLength` (number): The maximum length of the search buffer (default is typically defined elsewhere).
+ *   - `lookaheadLength` (number): The length of the lookahead buffer (default is typically defined elsewhere).
+ * @returns {Object} An object containing the following properties:
+ *   - `data` (EncodedArray): The encoded data, which includes literals and offset-length pairs.
+ *   - `length` (number): The length of the encoded data.
+ *   - `schema` (number[]): An array of bytes representing the schema for interpreting the encoded data.
  */
-export function lzssEncode(input: string, options?: Partial<Options>) {
+export function lzssEncode(
+  input: string,
+  options?: Partial<Options>
+): {
+  data: EncodedArray;
+  length: number;
+  schema: number[];
+} {
   const encodedData: EncodedArray = [];
   // `schema` is a byte array where each bit indicates type of encoded data.
   // 0 -> represents a literal symbol;
