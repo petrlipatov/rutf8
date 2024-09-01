@@ -1,5 +1,15 @@
 import { END_OF_STRING } from "./utils/constants";
 
+/**
+ * Encodes a given string using the Burrows-Wheeler Transform (BWT).
+ *
+ * The function generates all cyclic permutations of the input string, sorts them
+ * lexicographically, and constructs the BWT string from the last characters of each
+ * permutation. It also returns the index of the original string in the sorted list of permutations.
+ *
+ * @param {string} input - The string to be encoded using the Burrows-Wheeler Transform.
+ * @returns {{ bwt: string; index: number }} An object containing the encoded BWT string and the index of the original string.
+ */
 export function bwtEncode(input: string): { bwt: string; index: number } {
   input += END_OF_STRING;
 

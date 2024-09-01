@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "target": "ES5",
-    "module": "ES6",
+    "module": "CommonJS",
     "lib": ["ES2020", "dom"],
-    "outDir": "./dist/lib/es6",
+    "outDir": "./dist/lib/es5",
     "rootDir": "./src",
     "downlevelIteration": true,
     "noImplicitAny": false,
