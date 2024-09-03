@@ -34,4 +34,5 @@ export { rleDecode } from "./algorithms/rle/rleDecoder";
 
 // other
 
+export { getByteLength } from "./tools/getByteLength";
 export { calculateOptimalBytesCompression } from "./tools/entropy";
