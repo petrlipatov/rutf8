@@ -12,23 +12,33 @@ import { END_OF_STRING } from "./utils/constants";
  */
 export function bwtEncode(input: string): { bwt: string; index: number } {
   input += END_OF_STRING;
+  const length = input.length;
 
-  const permutations: string[] = [];
-  for (let i = 0; i < input.length; i++) {
-    permutations.push(input.slice(i) + input.slice(0, i));
-  }
+  const permutationsIndexes = Array.from({ length }, (_, i) => i);
 
-  permutations.sort();
+  // we're sorting all permutations
+  // using indexes
+  // without creating actual strings
+  permutationsIndexes.sort((a, b) => {
+    for (let i = 0; i < length; i++) {
+      const charA = input[(a + i) % length];
+      const charB = input[(b + i) % length];
+      if (charA < charB) return -1;
+      if (charA > charB) return 1;
+    }
+    return 0;
+  });
 
-  let bwtResult = "";
+  const bwtResult: string[] = [];
   let originalIndex = -1;
 
-  for (let i = 0; i < permutations.length; i++) {
-    bwtResult += permutations[i][input.length - 1];
-    if (permutations[i] === input) {
+  for (let i = 0; i < length; i++) {
+    const index = permutationsIndexes[i];
+    bwtResult.push(input[(index + length - 1) % length]);
+    if (index === 0) {
       originalIndex = i;
     }
   }
 
-  return { bwt: bwtResult, index: originalIndex };
+  return { bwt: bwtResult.join(""), index: originalIndex };
 }

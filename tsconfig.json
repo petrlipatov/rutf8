@@ -5,8 +5,9 @@
     "lib": ["ES2020", "dom"],
     "outDir": "./dist/lib/es6",
     "rootDir": "./src",
+    "strict": true,
     "downlevelIteration": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "declaration": true,
     "moduleResolution": "node"
   },
