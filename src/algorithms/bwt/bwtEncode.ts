@@ -3,7 +3,7 @@ import { END_OF_STRING } from "./utils/constants";
 /**
  * Encodes a given string using the Burrows-Wheeler Transform (BWT).
  *
- * The function generates all cyclic permutations of the input string, sorts them
+ * The function virtualizes all cyclic permutations of the input string, sorts them
  * lexicographically, and constructs the BWT string from the last characters of each
  * permutation. It also returns the index of the original string in the sorted list of permutations.
  *
@@ -16,7 +16,7 @@ export function bwtEncode(input: string): { bwt: string; index: number } {
 
   const permutationsIndexes = Array.from({ length }, (_, i) => i);
 
-  // we're sorting all permutations
+  // sorting all permutations
   // using indexes
   // without creating actual strings
   permutationsIndexes.sort((a, b) => {

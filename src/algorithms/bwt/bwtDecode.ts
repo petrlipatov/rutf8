@@ -4,16 +4,16 @@ import { END_OF_STRING } from "./utils/constants";
 /**
  * Decodes a string that was encoded using the Burrows-Wheeler Transform (BWT).
  *
- * The function reconstructs the original string from its BWT representation by:
+
+ * 1. Create a createFrequencyMap for chars from input string.
  *
- * 1. Building a frequency table of characters from the BWT string.
- * 2. Creating a table that maps each character to its first occurrence in the sorted version of the BWT string.
- * 3. Generating a `nextRow` table that helps in reconstructing the original string by indicating the position of each character in the sorted table.
- * 4. Using the `nextRow` table and starting from the provided index to rebuild the original string in reverse order.
+ * 2. Construct a mapping (`firstOccurrenceTable`) that indicates the starting position of each character in the sorted BWT string.
  *
- * Instead of concatenating strings repeatedly, the function constructs the result using an array and then converts it to a string for improved performance.
+ * 3. Compute the index of each character in the BWT string as it appears in the sorted BWT string. 
  *
- * @param {string} bwt - The Burrows-Wheeler Transform (BWT) encoded string to decode.
+ * 4. Using the `charsIndexesInSortedInput` array, trace back from the given index to reconstruct the original string.
+ *
+ * @param {string} input - BWT encoded string to decode.
  * @param {number} index - The index of the original string in the sorted permutation table.
  * @returns {string} The decoded original string.
  */
