@@ -18,7 +18,7 @@ import { russianToAsciiMap, asciiToRussianMap } from "./utils/constants";
  * @param {string} text - The input string to encode using the RUTF8 encoding scheme.
  * @returns {string} The RUTF8-encoded string.
  */
-export function rutf8Encode(text): string {
+export function rutf8Encode(text: string): string {
   const output: string[] = new Array(text.length);
   let index = 0;
   for (const char of text) {

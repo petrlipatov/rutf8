@@ -1,5 +1,3 @@
-import { Node } from "./types";
-
 export class PriorityQueue<T> {
   private heap: T[] = [];
 
