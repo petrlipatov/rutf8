@@ -12,7 +12,7 @@ import { extractSymbolAndCount } from "./utils/helpers";
 export function rleDecode(input: string): string {
   if (input.length === 0) return "";
 
-  let output = "";
+  const output = [];
   let pointer = 0;
 
   while (pointer < input.length) {
@@ -20,9 +20,9 @@ export function rleDecode(input: string): string {
       input,
       pointer
     );
-    output += char.repeat(count);
+    output.push(char.repeat(count));
     pointer = updatedPointer;
   }
 
-  return output;
+  return output.join("");
 }
