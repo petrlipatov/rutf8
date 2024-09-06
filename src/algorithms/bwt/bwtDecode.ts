@@ -4,12 +4,11 @@ import { END_OF_STRING } from "./utils/constants";
 /**
  * Decodes a string that was encoded using the Burrows-Wheeler Transform (BWT).
  *
-
  * 1. Create a createFrequencyMap for chars from input string.
  *
  * 2. Construct a mapping (`firstOccurrenceTable`) that indicates the starting position of each character in the sorted BWT string.
  *
- * 3. Compute the index of each character in the BWT string as it appears in the sorted BWT string. 
+ * 3. Compute the index of each character in the BWT string as it appears in the sorted BWT string.
  *
  * 4. Using the `charsIndexesInSortedInput` array, trace back from the given index to reconstruct the original string.
  *
