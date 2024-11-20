@@ -12,8 +12,7 @@ npm install rutf8-toolkit
 
 ESM & CommonJS support:
 
-```
-
+```typescript
 import { rutf8BinaryEncode } from 'rutf8-toolkit';
 
 const { rutf8BinaryEncode } = require('rutf8-toolkit');
