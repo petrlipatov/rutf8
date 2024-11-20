@@ -54,12 +54,12 @@ A custom encoding method that swaps Cyrillic characters and ASCII characters in 
 
 #### Examples:
 
-```
+```typescript
 const string = 'Карл-Франц'
 const rutfEncoded = rutf8Encoder(string) // 'Larm-Vraox'
 ```
 
-```
+```typescript
 const string = 'Карл-Франц'
 const rutfBinaryEncoded = binaryEncoder(string) // ArrayBuffer
 ```
@@ -106,7 +106,7 @@ The Huffman coding module uses the Huffman tree algorithm for variable-length en
 
 #### Examples:
 
-```
+```typescript
 const string =
   "Император Карл-Франц обычно одет в полный доспех. Император Карл-Франц. обычно одет. в полный доспех.";
 
@@ -136,7 +136,7 @@ LZ77 is one of the foundational text compression algorithms proposed by Lempel a
 
 #### Examples:
 
-```
+```typescript
 const string =
   "Император Карл-Франц обычно одет в полный доспех. Император Карл-Франц. обычно одет. в полный доспех.";
 
@@ -160,7 +160,7 @@ The Burrows-Wheeler Transform (BWT) is a reversible data pre-processing algorith
 
 #### Examples:
 
-```
+```typescript
 const string = 'banana'
 const bwtEncoded = bwtEncode(string) // { bwt: 'annb$aa', index: 4 }
 
@@ -178,7 +178,7 @@ Run-Length Encoding (RLE) is a simple compression technique that replaces sequen
 
 #### Examples:
 
-```
+```typescript
 const string = 'aaab4bbbbbcc'
 const rleEncoded = rleEncode(string) // "a3b4b5c2"
 ```
